@@ -1,0 +1,19 @@
+<section>
+    <section>
+        <button (click)="startRecording()" *ngIf="!isRecording">Record</button>
+        <button (click)="pauseRecording()" *ngIf="isRecording && !isPaused">Pause</button>
+        <button (click)="resumeRecording()" *ngIf="isRecording && isPaused">Resume</button>
+        <button (click)="stopRecording()" *ngIf="isRecording">Stop</button>
+    </section>
+
+    <section>
+        {{ transcript }}
+    </section>
+
+    <section>
+        <h2>Previous Recordings</h2>
+        <ul>
+        <li *ngFor="let transcript of transcripts">{{ transcript.filename }}</li>
+        </ul>
+    </section>
+</section>
